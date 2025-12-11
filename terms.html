@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms & Conditions - Axiomflow</title>
+    <title>Terms & Conditions - AxiomOrbit</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
@@ -37,12 +37,44 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo:hover {
+            transform: translateY(-1px);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 2px 4px rgba(37, 211, 102, 0.2));
+            transition: filter 0.3s ease;
+        }
+
+        .logo:hover .logo-icon svg {
+            filter: drop-shadow(0 4px 8px rgba(37, 211, 102, 0.4));
+        }
+
+        .logo-text {
             font-size: 24px;
             font-weight: 800;
             background: linear-gradient(135deg, #25D366, #128C7E);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-decoration: none;
+            letter-spacing: -0.6px;
+            transition: all 0.3s ease;
         }
 
         .content {
@@ -133,13 +165,47 @@
             .content {
                 padding: 40px 0;
             }
+
+            .logo-icon {
+                width: 32px;
+                height: 32px;
+            }
+
+            .logo-text {
+                font-size: 20px;
+            }
+
+            .logo {
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <a href="index.html" class="logo">Axiomflow</a>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+                        <!-- Network/Constellation Nodes with improved spacing -->
+                        <!-- Top node -->
+                        <circle cx="24" cy="12" r="3.5" fill="#25D366"/>
+                        <!-- Bottom left node -->
+                        <circle cx="12" cy="30" r="3.5" fill="#25D366"/>
+                        <!-- Bottom right node -->
+                        <circle cx="36" cy="30" r="3.5" fill="#25D366"/>
+                        <!-- Bottom center node -->
+                        <circle cx="24" cy="36" r="3.5" fill="#25D366"/>
+                        <!-- Connection lines -->
+                        <line x1="24" y1="12" x2="12" y2="30" stroke="#25D366" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="24" y1="12" x2="36" y2="30" stroke="#25D366" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="12" y1="30" x2="24" y2="36" stroke="#25D366" stroke-width="2.5" stroke-linecap="round"/>
+                        <!-- Subtle orbital curve -->
+                        <path d="M 10 30 Q 24 18 38 30" stroke="#25D366" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
+                    </svg>
+                </div>
+                <span class="logo-text">AxiomOrbit</span>
+            </a>
         </div>
     </header>
 
@@ -148,13 +214,13 @@
             <h1>Terms & Conditions</h1>
             <p class="last-updated">Last Updated: December 4, 2024</p>
 
-            <p>Welcome to Axiomflow. By accessing or using our WhatsApp AI agent services, you agree to be bound by these Terms and Conditions. Please read them carefully.</p>
+            <p>Welcome to AxiomOrbit. By accessing or using our WhatsApp AI agent services, you agree to be bound by these Terms and Conditions. Please read them carefully.</p>
 
             <h2>1. Acceptance of Terms</h2>
             <p>By accessing and using our services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to these terms, please do not use our services.</p>
 
             <h2>2. Description of Service</h2>
-            <p>YourBrand provides AI-powered WhatsApp automation and customer service solutions for e-commerce businesses, including but not limited to:</p>
+            <p>AxiomOrbit provides AI-powered WhatsApp automation and customer service solutions for e-commerce businesses, including but not limited to:</p>
             <ul>
                 <li>Automated customer support via WhatsApp</li>
                 <li>Order processing and tracking</li>
@@ -216,7 +282,7 @@
 
             <h2>7. Intellectual Property</h2>
             <h3>7.1 Our IP</h3>
-            <p>All content, features, and functionality of our services are owned by YourBrand and are protected by international copyright, trademark, and other intellectual property laws.</p>
+            <p>All content, features, and functionality of our services are owned by AxiomOrbit and are protected by international copyright, trademark, and other intellectual property laws.</p>
 
             <h3>7.2 Your IP</h3>
             <p>You retain ownership of any content you submit through our services. By submitting content, you grant us a license to use it solely for providing our services.</p>
@@ -238,7 +304,7 @@
             </ul>
 
             <h2>10. Indemnification</h2>
-            <p>You agree to indemnify and hold YourBrand harmless from any claims, damages, losses, or expenses arising from your use of our services or violation of these Terms.</p>
+            <p>You agree to indemnify and hold AxiomOrbit harmless from any claims, damages, losses, or expenses arising from your use of our services or violation of these Terms.</p>
 
             <h2>11. Termination</h2>
             <h3>11.1 By You</h3>
@@ -259,7 +325,7 @@
 
             <h2>14. General Provisions</h2>
             <h3>14.1 Entire Agreement</h3>
-            <p>These Terms constitute the entire agreement between you and YourBrand regarding our services.</p>
+            <p>These Terms constitute the entire agreement between you and AxiomOrbit regarding our services.</p>
 
             <h3>14.2 Severability</h3>
             <p>If any provision is found unenforceable, the remaining provisions will remain in effect.</p>
@@ -270,7 +336,7 @@
             <h2>15. Contact Information</h2>
             <p>For questions about these Terms, please contact us at:</p>
             <p>
-                Email: legal@yourbrand.com<br>
+                Email: legal@axiomorbit.com<br>
                 Address: [Your Business Address]<br>
                 Phone: [Your Business Phone]
             </p>
@@ -289,8 +355,8 @@
                 <a href="cookie-policy.html">Cookie Policy</a>
                 <a href="terms.html">Terms & Conditions</a>
             </div>
-            <p style="color: #666;">© 2024 Axiomflow. All rights reserved.</p>
+            <p style="color: #666;">© 2024 AxiomOrbit. All rights reserved.</p>
         </div>
     </footer>
 </body>
-</html>
+</html> 
