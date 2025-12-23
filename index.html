@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -131,7 +131,7 @@
         border-radius: 8px;
         text-decoration: none;
         font-weight: 600;
-        transition: all 0.2s ease;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         border: none;
         cursor: pointer;
         font-size: 16px;
@@ -140,11 +140,36 @@
         pointer-events: auto;
         -webkit-tap-highlight-color: rgba(37, 211, 102, 0.3);
         touch-action: manipulation;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-button::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+      }
+
+      .cta-button:hover::before {
+        width: 300px;
+        height: 300px;
       }
 
       .cta-button:hover {
         background: #128c7e;
-        transform: translateY(-1px);
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      }
+
+      .cta-button:active {
+        transform: translateY(0) scale(1.02);
       }
 
       .cta-button:focus {
@@ -199,6 +224,19 @@
         opacity: 0.5;
         pointer-events: none;
         z-index: 0;
+        animation: pulseGlow 4s ease-in-out infinite;
+      }
+
+      @keyframes pulseGlow {
+        0%,
+        100% {
+          opacity: 0.5;
+          transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+          opacity: 0.7;
+          transform: translate(-50%, -50%) scale(1.1);
+        }
       }
 
       .badge {
@@ -838,13 +876,36 @@
         background: rgba(255, 255, 255, 0.02);
         border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 12px;
-        transition: all 0.2s ease;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .stat-item:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+
+      .stat-item:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .stat-item:nth-child(3) {
+        animation-delay: 0.3s;
       }
 
       .stat-item:hover {
-        transform: translateY(-2px);
+        transform: translateY(-8px) scale(1.02);
         background: rgba(255, 255, 255, 0.04);
-        border-color: rgba(37, 211, 102, 0.3);
+        border-color: rgba(37, 211, 102, 0.5);
+        box-shadow: 0 10px 30px rgba(37, 211, 102, 0.2);
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       .stat-number {
@@ -903,14 +964,37 @@
         border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 12px;
         padding: 40px;
-        transition: all 0.2s ease;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      .service-card.animate {
+        animation: fadeInUp 0.8s ease forwards;
+      }
+
+      .service-card:nth-child(1).animate {
+        animation-delay: 0.1s;
+      }
+
+      .service-card:nth-child(2).animate {
+        animation-delay: 0.2s;
+      }
+
+      .service-card:nth-child(3).animate {
+        animation-delay: 0.3s;
       }
 
       .service-card:hover {
-        transform: translateY(-4px);
+        transform: translateY(-8px) scale(1.02);
         background: rgba(255, 255, 255, 0.04);
-        border-color: rgba(37, 211, 102, 0.3);
+        border-color: rgba(37, 211, 102, 0.5);
+        box-shadow: 0 15px 40px rgba(37, 211, 102, 0.25);
+      }
+
+      .service-card:hover .service-icon {
+        transform: scale(1.1) rotate(5deg);
       }
 
       .service-icon {
@@ -922,6 +1006,7 @@
         justify-content: center;
         background: rgba(37, 211, 102, 0.08);
         border-radius: 10px;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
       .service-icon svg {
@@ -961,12 +1046,46 @@
         background: rgba(255, 255, 255, 0.02);
         border-radius: 12px;
         border: 1px solid rgba(255, 255, 255, 0.08);
-        transition: all 0.2s ease;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+
+      .feature-item.animate {
+        animation: slideInLeft 0.6s ease forwards;
+      }
+
+      .feature-item:nth-child(even) {
+        transform: translateX(30px);
+      }
+
+      .feature-item:nth-child(even).animate {
+        animation: slideInRight 0.6s ease forwards;
       }
 
       .feature-item:hover {
         background: rgba(255, 255, 255, 0.04);
-        border-color: rgba(37, 211, 102, 0.3);
+        border-color: rgba(37, 211, 102, 0.5);
+        transform: translateX(0) translateY(-4px);
+        box-shadow: 0 10px 30px rgba(37, 211, 102, 0.15);
+      }
+
+      .feature-item:nth-child(even):hover {
+        transform: translateX(0) translateY(-4px);
+      }
+
+      @keyframes slideInLeft {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideInRight {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
       }
 
       .feature-icon {
@@ -978,6 +1097,11 @@
         justify-content: center;
         background: rgba(37, 211, 102, 0.08);
         border-radius: 10px;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .feature-item:hover .feature-icon {
+        transform: scale(1.15) rotate(-5deg);
       }
 
       .feature-icon svg {
@@ -1145,6 +1269,32 @@
         pointer-events: none;
       }
 
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .section-header {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .section-header.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
       @media (max-width: 768px) {
         .hero h1 {
           font-size: 32px;
@@ -1310,7 +1460,7 @@
                 />
               </svg>
             </div>
-            <span class="logo-text">leapnodes</span>
+            <span class="logo-text">AxiomOrbit</span>
           </a>
           <a
             href="contact.html"
@@ -1809,6 +1959,48 @@
           window.requestAnimationFrame(updateHeader);
           ticking = true;
         }
+      });
+
+      // Scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        // Observe service cards
+        document.querySelectorAll(".service-card").forEach((card) => {
+          observer.observe(card);
+        });
+
+        // Observe feature items
+        document.querySelectorAll(".feature-item").forEach((item) => {
+          observer.observe(item);
+        });
+
+        // Observe section headers
+        document.querySelectorAll(".section-header").forEach((header) => {
+          observer.observe(header);
+        });
+
+        // Animate stats immediately (they're in viewport)
+        setTimeout(() => {
+          document.querySelectorAll(".stat-item").forEach((item, index) => {
+            setTimeout(() => {
+              item.style.animationDelay = `${index * 0.1}s`;
+            }, 100);
+          });
+        }, 300);
       });
 
       // Interactive Demo System
@@ -2398,4 +2590,4 @@
     </script>
   </body>
 </html>
-
+ 
